@@ -30,16 +30,16 @@ const weapon = document.getElementsByName("weapon")[1].value;
     const updatedCharacter = {};
 
     if (name !== "") {
-      updatedCharacter.name = document.getElementsByName("name")[1].value;
+      updatedCharacter.name = name;
     } 
     if (occupation !== "") {
-      updatedCharacter.occupation = document.getElementsByName("occupation")[1].value;
+      updatedCharacter.occupation = occupation;
     } 
     if (debt === "true") {
-      updatedCharacter.debt = document.getElementsByName("debt")[1].checked;
+      updatedCharacter.debt = debt;
     } 
     if (weapon !== "") {
-      updatedCharacter.weapon = document.getElementsByName("weapon")[1].value;
+      updatedCharacter.weapon = weapon;
     }
 
     charactersAPI.updateOneRegister(id, updatedCharacter);
