@@ -3,7 +3,7 @@ const charactersAPI = new APIHandler("http://localhost:8000")
 $(document).ready( () => {
   document.getElementById('fetch-all').onclick = function(){
     charactersAPI.getFullList();
-  }
+  };
   
   document.getElementById('fetch-one').onclick = function(){
     const id = document.getElementsByName("character-id")[0].value;
@@ -15,17 +15,17 @@ $(document).ready( () => {
     const id = document.getElementsByName("character-id-delete")[0].value;
     console.log("deleted char has id: ", id);
     charactersAPI.deleteOneRegister(id);
-  }
+  };
   
   document.getElementById('edit-character-form').onsubmit = function(){
     event.preventDefault(); 
     const id = document.getElementsByName("chr-id")[0].value;
     // console.log("id", id);
     
-const name = document.getElementsByName("name")[1].value;
-const occupation = document.getElementsByName("occupation")[1].value;
-const debt = document.getElementsByName("debt")[1].checked;
-const weapon = document.getElementsByName("weapon")[1].value;
+    const name = document.getElementsByName("name")[1].value;
+    const occupation = document.getElementsByName("occupation")[1].value;
+    const debt = document.getElementsByName("debt")[1].checked;
+    const weapon = document.getElementsByName("weapon")[1].value;
 
     const updatedCharacter = {};
 
@@ -41,9 +41,7 @@ const weapon = document.getElementsByName("weapon")[1].value;
     if (weapon !== "") {
       updatedCharacter.weapon = weapon;
     }
-
-    charactersAPI.updateOneRegister(id, updatedCharacter);
-   
+    charactersAPI.updateOneRegister(id, updatedCharacter); 
   };
   
   document.getElementById('new-character-form').onsubmit = function(){
@@ -71,8 +69,6 @@ const weapon = document.getElementsByName("weapon")[1].value;
         };  
         console.log("MyChar: ", myCharacter)
         charactersAPI.createOneRegister(myCharacter);
-    }
-
-                
-  }
-})
+    }              
+  };
+});

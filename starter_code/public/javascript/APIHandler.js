@@ -24,7 +24,8 @@ class APIHandler {
           </div>`
         );
         $(".characters-container").append(myHtml);
-
+        
+      // no-Jquery approach:
       //   const myHtml = 
       //   `<div class="character-info">
       //       <div class="id">Id: ${oneRes.id}</div>
@@ -34,10 +35,7 @@ class APIHandler {
       //       <div class="weapon">Weapon: ${oneRes.weapon}</div>
       //   </div>`;
       // document.getElementsByClassName("characters-container")[0].innerHTML += myHtml;
-
       });
-
-
     })
     .catch((error) =>{
       console.log(error);
